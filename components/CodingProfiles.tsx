@@ -147,7 +147,7 @@ export const CodingProfiles: React.FC = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
         <motion.div
-          className="absolute top-20 left-10 w-80 h-80 rounded-full blur-3xl opacity-10"
+          className="absolute top-20 left-10 w-80 h-80 rounded-full opacity-10"
           style={{
             background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent)',
           }}
@@ -155,7 +155,7 @@ export const CodingProfiles: React.FC = () => {
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-80 h-80 rounded-full blur-3xl opacity-10"
+          className="absolute bottom-20 right-10 w-80 h-80 rounded-full opacity-10"
           style={{
             background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
           }}

@@ -47,17 +47,17 @@ const ActivityGraph: React.FC = () => {
       // Generate realistic mock data based on patterns
       const activityData = generateRealisticData();
       setSubmissions(activityData);
-      
+
       // Calculate stats from data
       const total = activityData.reduce((sum, day) => sum + day.count, 0);
-      
+
       setStats({
         totalSubmissions: total,
         weekStreak: 7,
         longestStreak: 23,
         avgPerDay: Math.round(total / 30),
       });
-      
+
       setLoading(false);
     }, 500);
   }, []);
@@ -99,7 +99,7 @@ const ActivityGraph: React.FC = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10"
+          className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
           style={{
             background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
           }}
@@ -174,7 +174,7 @@ const ActivityGraph: React.FC = () => {
         >
           <div className="mb-6">
             <h3 className="text-white font-semibold mb-4">Last 30 Days Activity</h3>
-            
+
             {loading ? (
               <div className="flex items-center justify-center h-40">
                 <div className="w-8 h-8 border-2 border-green-500 border-t-transparent rounded-full animate-spin" />

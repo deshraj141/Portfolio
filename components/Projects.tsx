@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface Project {
@@ -16,7 +17,7 @@ interface Project {
   gradient: string;
   github: string;
   live: string;
-  icon: React.ReactNode;
+  image: string;
   bgOverlay: string;
 }
 
@@ -34,16 +35,8 @@ const projects: Project[] = [
     gradient: 'from-green-600 to-green-900',
     github: 'https://github.com/deshraj141/Talk-Flow',
     live: 'https://github.com/deshraj141/Talk-Flow',
+    image: 'https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=600&h=400&fit=crop',
     bgOverlay: 'from-green-500/20 via-green-400/10 to-transparent',
-    icon: (
-      <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none">
-        <circle cx="30" cy="30" r="8" fill="#22c55e"/>
-        <circle cx="70" cy="30" r="8" fill="#86efac"/>
-        <rect x="10" y="45" width="35" height="20" rx="4" fill="#22c55e" opacity="0.8"/>
-        <rect x="55" y="45" width="35" height="20" rx="4" fill="#86efac" opacity="0.8"/>
-        <path d="M 30 65 Q 30 80 50 85 Q 70 80 70 65" stroke="#22c55e" strokeWidth="2" fill="none"/>
-      </svg>
-    ),
   },
   {
     id: 2,
@@ -58,16 +51,8 @@ const projects: Project[] = [
     gradient: 'from-cyan-600 to-cyan-900',
     github: 'https://github.com/deshraj141',
     live: 'https://github.com/deshraj141',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
     bgOverlay: 'from-cyan-500/20 via-cyan-400/10 to-transparent',
-    icon: (
-      <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none">
-        <rect x="15" y="15" width="70" height="70" rx="4" fill="#06b6d4" opacity="0.2" strokeWidth="2" stroke="#06b6d4"/>
-        <line x1="25" y1="30" x2="75" y2="30" stroke="#06b6d4" strokeWidth="2"/>
-        <line x1="25" y1="45" x2="55" y2="45" stroke="#22d3ee" strokeWidth="1.5"/>
-        <circle cx="65" cy="45" r="5" fill="#06b6d4"/>
-        <line x1="25" y1="60" x2="75" y2="60" stroke="#22d3ee" strokeWidth="1.5"/>
-      </svg>
-    ),
   },
   {
     id: 3,
@@ -82,17 +67,8 @@ const projects: Project[] = [
     gradient: 'from-emerald-600 to-teal-900',
     github: 'https://github.com/deshraj141/Fitness-Tracker',
     live: 'https://github.com/deshraj141/Fitness-Tracker',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop',
     bgOverlay: 'from-emerald-500/20 via-teal-400/10 to-transparent',
-    icon: (
-      <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="35" r="10" fill="#10b981"/>
-        <rect x="45" y="48" width="10" height="25" fill="#10b981"/>
-        <rect x="30" y="55" width="10" height="18" fill="#059669"/>
-        <rect x="60" y="55" width="10" height="18" fill="#059669"/>
-        <rect x="35" y="73" width="8" height="12" fill="#10b981"/>
-        <rect x="57" y="73" width="8" height="12" fill="#10b981"/>
-      </svg>
-    ),
   },
   {
     id: 4,
@@ -107,14 +83,8 @@ const projects: Project[] = [
     gradient: 'from-blue-600 to-indigo-900',
     github: 'https://github.com/deshraj141/API-With-React',
     live: 'https://github.com/deshraj141/API-With-React',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
     bgOverlay: 'from-blue-500/20 via-indigo-400/10 to-transparent',
-    icon: (
-      <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none">
-        <path d="M 20 50 L 35 35 L 35 65 Z" fill="#3b82f6"/>
-        <path d="M 40 30 L 60 50 L 40 70" stroke="#60a5fa" strokeWidth="2.5" fill="none"/>
-        <path d="M 65 30 L 80 50 L 65 70" stroke="#3b82f6" strokeWidth="2.5" fill="none"/>
-      </svg>
-    ),
   },
   {
     id: 5,
@@ -129,16 +99,8 @@ const projects: Project[] = [
     gradient: 'from-orange-600 to-red-900',
     github: 'https://github.com/deshraj141/Real-Estate-Website',
     live: 'https://deshraj141.github.io/Real-Estate-Website/',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop',
     bgOverlay: 'from-orange-500/20 via-red-400/10 to-transparent',
-    icon: (
-      <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none">
-        <polygon points="50,20 30,50 35,50 35,75 65,75 65,50 70,50" fill="#f97316" opacity="0.3" stroke="#f97316" strokeWidth="1.5"/>
-        <rect x="40" y="55" width="8" height="8" fill="#f97316"/>
-        <rect x="52" y="55" width="8" height="8" fill="#f97316"/>
-        <rect x="40" y="67" width="8" height="8" fill="#fb923c"/>
-        <rect x="52" y="67" width="8" height="8" fill="#fb923c"/>
-      </svg>
-    ),
   },
 ];
 
@@ -171,7 +133,7 @@ export const Projects: React.FC = () => {
   return (
     <section id="projects" className="relative w-full py-32 px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full blur-3xl opacity-10" style={{
+        <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full opacity-10" style={{
           background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
         }} />
       </div>
@@ -181,7 +143,7 @@ export const Projects: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ 
+          transition={{
             duration: 0.8,
             ease: [0.34, 1.56, 0.64, 1],
           }}
@@ -202,7 +164,7 @@ export const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ 
+              transition={{
                 delay: i * 0.1,
                 duration: 0.6,
                 ease: [0.34, 1.56, 0.64, 1],
@@ -216,13 +178,13 @@ export const Projects: React.FC = () => {
                 border: hoveredId === project.id ? '2px solid rgba(34, 197, 94, 0.8)' : '1px solid rgba(34, 197, 94, 0.2)',
                 transform: hoveredId === project.id ? `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` : 'rotateX(0deg) rotateY(0deg)',
                 transformStyle: 'preserve-3d',
-                boxShadow: hoveredId === project.id 
-                  ? '0 0 40px rgba(34, 197, 94, 0.6), 0 20px 60px rgba(34, 197, 94, 0.3)' 
+                boxShadow: hoveredId === project.id
+                  ? '0 0 40px rgba(34, 197, 94, 0.6), 0 20px 60px rgba(34, 197, 94, 0.3)'
                   : '0 10px 30px rgba(0, 0, 0, 0.3)',
                 transition: 'all 0.3s ease-out',
               }}
             >
-              {/* Image/Icon Header */}
+              {/* Image Header */}
               <div className={`h-56 bg-linear-to-br ${project.gradient} overflow-hidden relative flex items-center justify-center`}>
                 {/* Background Gradient Overlay */}
                 <motion.div
@@ -231,21 +193,14 @@ export const Projects: React.FC = () => {
                   animate={hoveredId === project.id ? { opacity: 1 } : { opacity: 0.5 }}
                   transition={{ duration: 0.3 }}
                 />
-
-                {/* Animated Icon Container */}
-                <motion.div
-                  className="relative z-10 text-white drop-shadow-2xl"
-                  animate={hoveredId === project.id ? { scale: 1.15, y: -10 } : { scale: 1, y: 0 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                >
-                  <motion.div
-                    animate={hoveredId === project.id ? { rotate: 360 } : { rotate: 0 }}
-                    transition={{ duration: 0.6, ease: 'easeInOut' }}
-                  >
-                    {project.icon}
-                  </motion.div>
-                </motion.div>
-
+                {/* Image Display */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="relative z-10 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
                 {/* Floating Particles on Hover */}
                 {hoveredId === project.id && (
                   <>
@@ -289,7 +244,7 @@ export const Projects: React.FC = () => {
 
               {/* Content */}
               <div className="p-6 space-y-4 relative z-10">
-                <motion.h3 
+                <motion.h3
                   className="text-xl font-bold text-white group-hover:text-green-400 transition-colors"
                   animate={hoveredId === project.id ? { y: -4 } : { y: 0 }}
                 >
@@ -387,11 +342,11 @@ export const Projects: React.FC = () => {
               </motion.div>
 
               {/* Glow effect */}
-              <motion.div 
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" 
+              <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10"
                 style={{
-                  background: hoveredId === project.id 
-                    ? 'radial-gradient(circle at center, rgba(34, 197, 94, 0.4), transparent)' 
+                  background: hoveredId === project.id
+                    ? 'radial-gradient(circle at center, rgba(34, 197, 94, 0.4), transparent)'
                     : 'none',
                 }}
               />
@@ -399,7 +354,7 @@ export const Projects: React.FC = () => {
               {/* Light reflection on mouse move */}
               {hoveredId === project.id && (
                 <motion.div
-                  className="absolute w-32 h-32 bg-green-400 rounded-full opacity-20 blur-3xl pointer-events-none"
+                  className="absolute w-32 h-32 bg-green-400 rounded-full opacity-20 pointer-events-none"
                   style={{
                     left: mousePosition.x - 64,
                     top: mousePosition.y - 64,

@@ -1,106 +1,58 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Navbar, Hero, RealtimeDemo, About, TechStackGrid, SkillsSection, Projects, Blog, CodingProfiles, ActivityGraph, Contact, Footer } from '@/components';
-import { pageTransitions } from '@/lib/animations';
+import dynamic from 'next/dynamic';
+import { Navbar, Hero, Contact, Footer, CursorGlow } from '@/components';
+
+const RealtimeDemo = dynamic(() => import('@/components/RealtimeDemo').then((mod) => mod.RealtimeDemo), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading demo...</div>,
+});
+
+const About = dynamic(() => import('@/components/About').then((mod) => mod.About), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading about...</div>,
+});
+
+const TechStackGrid = dynamic(() => import('@/components/TechStackGrid').then((mod) => mod.TechStackGrid), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading tech stack...</div>,
+});
+
+const SkillsSection = dynamic(() => import('@/components/SkillsSection').then((mod) => mod.SkillsSection), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading skills...</div>,
+});
+
+const Projects = dynamic(() => import('@/components/Projects').then((mod) => mod.Projects), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading projects...</div>,
+});
+
+const Certificates = dynamic(() => import('@/components/Certificates').then((mod) => mod.Certificates), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading certificates...</div>,
+});
+
+const CodingProfiles = dynamic(() => import('@/components/CodingProfiles').then((mod) => mod.CodingProfiles), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading profiles...</div>,
+});
+
+const ActivityGraph = dynamic(() => import('@/components/ActivityGraph').then((mod) => mod.default), {
+  loading: () => <div className="py-16 text-center text-white/50">Loading graph...</div>,
+});
 
 export default function Home() {
   return (
-    <motion.main
-      className="relative w-full min-h-screen bg-black text-white overflow-x-hidden"
-      initial="initial"
-      animate="animate"
-      variants={{
-        initial: { opacity: 0 },
-        animate: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.05,
-            delayChildren: 0.1,
-          },
-        },
-      }}
-    >
+    <main className="relative w-full min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
-      
-      <motion.div
-        variants={pageTransitions.sectionContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-      >
-        {/* Hero Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <Hero />
-        </motion.div>
+      <CursorGlow />
 
-        {/* Realtime Demo Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <RealtimeDemo />
-        </motion.div>
-        
-        {/* About Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <About />
-        </motion.div>
-        
-        {/* Tech Stack Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <TechStackGrid />
-        </motion.div>
-        
-        {/* Skills Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <SkillsSection />
-        </motion.div>
-        
-        {/* Projects Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <Projects />
-        </motion.div>
-        
-        {/* Blog Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <Blog />
-        </motion.div>
-
-        {/* Coding Profiles Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <CodingProfiles />
-        </motion.div>
-
-        {/* Activity Graph Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <ActivityGraph />
-        </motion.div>
-        
-        {/* Contact Section */}
-        <motion.div
-          variants={pageTransitions.section}
-        >
-          <Contact />
-        </motion.div>
-      </motion.div>
+      <Hero />
+      <RealtimeDemo />
+      <About />
+      <TechStackGrid />
+      <SkillsSection />
+      <Projects />
+      <Certificates />
+      <CodingProfiles />
+      <ActivityGraph />
+      <Contact />
 
       <Footer />
-    </motion.main>
+    </main>
   );
 }

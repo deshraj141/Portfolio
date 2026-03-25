@@ -37,10 +37,10 @@ export default function BlogPost() {
     <div className="min-h-screen bg-black text-white">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10" style={{
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10" style={{
           background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
         }} />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10" style={{
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-10" style={{
           background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2), transparent)',
         }} />
       </div>
@@ -161,7 +161,7 @@ export default function BlogPost() {
       >
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-white">More Articles</h2>
-          
+
           <div className="grid gap-6">
             {blogPosts
               .filter(p => p.id !== postId)

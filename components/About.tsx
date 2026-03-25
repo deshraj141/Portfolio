@@ -65,7 +65,7 @@ export const About: React.FC = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
         <motion.div
-          className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-15"
+          className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-15"
           style={{
             background: 'radial-gradient(circle, rgba(34, 197, 94, 0.4), transparent)',
           }}
@@ -80,7 +80,7 @@ export const About: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-15"
+          className="absolute bottom-0 right-0 w-96 h-96 rounded-full opacity-15"
           style={{
             background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
           }}
@@ -148,9 +148,8 @@ export const About: React.FC = () => {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-                  expandedCard === section.id ? 'text-green-400' : 'text-white'
-                }`}>
+                <h3 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${expandedCard === section.id ? 'text-green-400' : 'text-white'
+                  }`}>
                   {section.title}
                 </h3>
 

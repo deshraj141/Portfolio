@@ -110,7 +110,7 @@ export const Contact: React.FC = () => {
       {/* Animated Background Effects */}
       <div className="absolute inset-0 -z-10">
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-15"
+          className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-15"
           style={{
             background: 'radial-gradient(circle, rgba(34, 197, 94, 0.4), transparent)',
           }}
@@ -125,7 +125,7 @@ export const Contact: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-15"
+          className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-15"
           style={{
             background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
           }}
@@ -199,9 +199,8 @@ export const Contact: React.FC = () => {
 
                   {/* Label and Value */}
                   <p className="text-white/50 text-xs font-semibold mb-1">{method.label}</p>
-                  <p className={`font-semibold transition-colors duration-300 ${
-                    hoveredMethod === method.id ? 'text-green-400' : 'text-white'
-                  }`}>
+                  <p className={`font-semibold transition-colors duration-300 ${hoveredMethod === method.id ? 'text-green-400' : 'text-white'
+                    }`}>
                     {method.value}
                   </p>
 

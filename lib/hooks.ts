@@ -5,7 +5,7 @@ export const useScrollActive = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'blog', 'contact'];
+      const sections = ['home', 'about', 'projects', 'certificates', 'blog', 'contact'];
       
       for (const section of sections) {
         const element = document.getElementById(section);

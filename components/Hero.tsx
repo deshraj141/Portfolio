@@ -10,8 +10,8 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Blobs */}
-      <motion.div 
-        className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-20" 
+      <motion.div
+        className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-20"
         style={{
           background: 'radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent)',
         }}
@@ -25,8 +25,8 @@ export const Hero: React.FC = () => {
           ease: 'easeInOut',
         }}
       />
-      <motion.div 
-        className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-20" 
+      <motion.div
+        className="absolute bottom-0 right-0 w-96 h-96 rounded-full opacity-20"
         style={{
           background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2), transparent)',
         }}
@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 delay: 0.2,
                 duration: 0.8,
                 ease: [0.34, 1.56, 0.64, 1],
@@ -75,8 +75,8 @@ export const Hero: React.FC = () => {
                 I&apos;m Deshraj Soni
               </h1>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-green-400">
-                <TypingAnimation 
-                  text="Full-Stack Developer" 
+                <TypingAnimation
+                  text="Full-Stack Developer"
                   delay={1000}
                   speed={60}
                 />
@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 delay: 0.4,
                 duration: 0.8,
                 ease: [0.34, 1.56, 0.64, 1],
@@ -101,14 +101,14 @@ export const Hero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 delay: 0.6,
                 duration: 0.8,
                 ease: [0.34, 1.56, 0.64, 1],
               }}
               className="flex gap-4"
             >
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05, y: -2, boxShadow: '0 0 30px rgba(34, 197, 94, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ 
+              transition={{
                 delay: 0.8,
                 duration: 0.8,
                 ease: [0.34, 1.56, 0.64, 1],
@@ -144,11 +144,11 @@ export const Hero: React.FC = () => {
                 { label: 'Chat Latency', value: '<200ms' },
                 { label: 'Concurrent Users', value: '1000+' },
               ].map((stat, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
+                  transition={{
                     delay: 1 + i * 0.1,
                     duration: 0.6,
                     type: 'spring',
